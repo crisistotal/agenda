@@ -21,15 +21,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                 {% for agenda in agenda_list|dictsort:"id" reversed %}
+                                 {% for turno in turno_list|dictsort:"id" reversed %}
                                 <tr>
                                     {% comment %} <th><a href="{% url 'articulo:articulo' articulo.id articulo.nombre|slugify  %}">{{articulo.nombre}}</a></th> <!--link al articulo--> {% endcomment %}
                                     <div >
-                                    <th>{{agenda.turno.nombre}}</th>
-                                    <th style='text-align: right;'>{{agenda.fecha}}</th>
-                                    <th style='text-align: right;'>{{agenda.turno.celular}}</th>
-                                    <th style='text-align: right;'>{{agenda.turno.get_tamaño_display}}</th>
-                                    <th style='text-align: right;'>{{agenda.turno.get_tipo_display}}</th>
+                                    <th>{{turno.nombre}}</th>
+                                    <th style='text-align: right;'>{{turno.fecha}}</th>
+                                    <th style='text-align: right;'>{{turno.celular}}</th>
+                                    <th style='text-align: right;'>{{turno.get_tamaño_display}}</th>
+                                    <th style='text-align: right;'>{{turno.get_tipo_display}}</th>
                                 </tr>
                                   {% endfor %}
                             </tbody>

@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+<main role="main">
+  <div class="container">
+    <div class="row mt-3 mb-5">
+      <div class="col-md-9 mx-auto">
+        <div>
+          <form action="" method="post">{% csrf_token %}
+            <div class="card-body table-responsive" width="100%">
+                {% include 'turnos/includes/agenda_form.html' %}
+              <br>
+              <input type="submit" class="btn btn-success btn-block " value="Crear Articulo" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
