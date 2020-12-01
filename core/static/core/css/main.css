@@ -42,3 +42,12 @@ footer p {
 .box-shadow { 
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); 
 }
+
+a {
+    color:blueviolet !important;
+    font-family: 'Nothing You Could Do', cursive;
+}
+
+h1,h2 {
+    font-family: 'Nothing You Could Do', cursive;
+}
