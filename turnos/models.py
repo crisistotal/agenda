@@ -3,25 +3,31 @@ from django.conf import settings
 from datetime import datetime
 # Create your models here.
 
+tipos_turno = (
+    ('tat', 'Tatuaje'),
+    ('pir', 'Piercing'),
+)
+tamaños = (
+    ('g', 'Grande'),
+    ('m', 'Mediano'),
+    ('c', 'Chico'),
+)
 
 class Turno(models.Model):
-    tipos_turno = (
-        ('tat', 'Tatuaje'),
-        ('pir', 'Piercing'),
-    )
-    tamaños = (
-        ('g', 'Grande'),
-        ('m', 'Mediano'),
-        ('c', 'Chico'),
-    )
-
-    nombre = models.CharField(verbose_name='Nombre Y Apellido', max_length=50)
-    celular = models.IntegerField(verbose_name='Celular')
-    tipo = models.CharField(verbose_name='Tipo de Turno',
-                            max_length=3, choices=tipos_turno)
+    nombre = models.CharField(
+        verbose_name='Nombre Y Apellido',
+        max_length=50)
+    celular = models.IntegerField(
+        verbose_name='Celular')
+    tipo = models.CharField(
+        verbose_name='Tipo de Turno',
+        max_length=3,
+        choices=tipos_turno)
     tamaño = models.CharField(
-        verbose_name='Tamaño', max_length=1, choices=tamaños, default="Solo Piercing")
-    
+        verbose_name='Tamaño',
+        max_length=1,
+        choices=tamaños,
+        default="c")
     fecha = models.DateTimeField(default=datetime.now)
     
     def __str__(self):
