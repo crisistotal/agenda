@@ -1,15 +1,19 @@
 from django import forms
-from .models import Turno
 from django.forms import DateTimeField
 from datetimepicker.widgets import DateTimePicker
 
-
+from .models import Turno
+from turnos.models import tipos_turno, tamaños
 
 
 class TurnoForm(forms.ModelForm):
-
+    fecha = forms.DateTimeField(
+        input_formats=['%d/%m/%Y %H:%M'],
+        widget=forms.DateTimeInput(attrs={
+            'class': 'form-control datetimepicker-input',
+            'data-target': '#datetimepicker1'
+        })
+    )
     class Meta:
         model = Turno
-        fields = ['nombre', 'celular', 'tipo', 'tamaño', 'fecha']
-        widgets = {'fecha': forms.DateTimeInput(attrs={'class': 'form-control', 'placeholder': 'Select a date', 'type': 'date','id':'datetimepicker'})
-        }
+        fields = ['fecha', 'nombre', 'celular', 'tipo', 'tamaño']
