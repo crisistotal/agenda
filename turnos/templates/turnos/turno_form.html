@@ -8,8 +8,7 @@
         <div>
           <form action="" method="post">{% csrf_token %}
             <div class="card-body table-responsive" width="100%">
-                {% include 'turnos/includes/agenda_form.html' %}
-              <br>
+                {{ form.fecha }}
               <input type="submit" class="btn btn-success btn-block " value="Crear Articulo" />
             </div>
           </form>
