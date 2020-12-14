@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from datetime import datetime
+from django.urls import reverse
 # Create your models here.
 
 tipos_turno = (
@@ -20,7 +21,7 @@ class Turno(models.Model):
     celular = models.IntegerField(
         verbose_name='Celular')
     tipo = models.CharField(
-        verbose_name='Tipo de Turno',
+        verbose_name='Turno para?',
         max_length=3,
         choices=tipos_turno)
     tamaño = models.CharField(
@@ -30,6 +31,9 @@ class Turno(models.Model):
         default="c")
     fecha = models.DateTimeField(default=datetime.now)
     
+    def get_absolute_url(self):
+        return reverse('turnos:turno')
+
     def __str__(self):
         return f'{self.nombre} / {self.celular} / {self.tipo} / {self.tamaño}'
 
