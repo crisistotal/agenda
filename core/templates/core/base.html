@@ -24,7 +24,7 @@
   <!-- Navegación -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'home' %}" style="font-family: ;">Tres ojos</a>
+      <a class="navbar-brand accesos" href="{% url 'home' %}"">Tres ojos</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ned" aria-controls="ned"
         aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,7 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             {% if request.user.is_staff %}
-            <a class="nav-link" href="{% url 'turnos:create_turno' %}">Turno</a>
+            <a class="nav-link accesos" href="{% url 'turnos:create_turno' %}">Turno</a>
           </li>
           {% endif %}
           <li class="nav-item">

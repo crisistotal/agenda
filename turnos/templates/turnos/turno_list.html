@@ -22,10 +22,8 @@
                             </thead>
                             <tbody>
                                  {% for turno in turno_list|dictsort:"id" reversed %}
-                                <tr>
-                                    {% comment %} <th><a href="{% url 'articulo:articulo' articulo.id articulo.nombre|slugify  %}">{{articulo.nombre}}</a></th> <!--link al articulo--> {% endcomment %}
-                                    <div >
-                                    <th>{{turno.nombre}}</th>
+                                <tr></a>
+                                    <th><a href="{% url 'turnos:update_turno' turno.id|slugify %}">{{turno.nombre}}</th>
                                     <th style='text-align: right;'>{{turno.fecha}}</th>
                                     <th style='text-align: right;'>{{turno.celular}}</th>
                                     <th style='text-align: right;'>{{turno.get_tamaño_display}}</th>

@@ -43,7 +43,7 @@ footer p {
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); 
 }
 
-a {
+.accesos {
     color:blueviolet !important;
     font-family: 'Nothing You Could Do', cursive;
 }
