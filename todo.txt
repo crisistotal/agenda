@@ -1,3 +1,2 @@
-Se estan pudiendo mostrar los turnos en un cuadrito
-Se va creando lista basada en clase para mostrar solamente turnos
-Se creo funcion disponibilidad para ver que onda si se muestra o no
+Crear Vista Delete
+subir a git

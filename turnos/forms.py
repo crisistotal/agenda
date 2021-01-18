@@ -9,7 +9,7 @@ class TurnoForm(forms.ModelForm):
 
     class Meta:  # Configuracion personalizada para el form
         model = Turno
-        fields = ['nombre', 'celular', 'tipo', 'tamaño', 'fecha']
+        fields = ['nombre', 'celular', 'tipo', 'tamaño', 'fecha','responsable']
 
         widgets = {
             'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre y Apellido'}),
@@ -17,7 +17,8 @@ class TurnoForm(forms.ModelForm):
             'tipo' : forms.Select(attrs={'class': 'form-control'}),
             'tamaño': forms.Select(attrs={'class':'form-control'}),
             'fecha': DateTimePickerInput(attrs={'class':'form-control'},
-                format= '%d/%m/%Y %H:%M')
+                format= '%d/%m/%Y %H:%M'),
+            'responsable': forms.Select(attrs={'class': 'form-control', 'placeholder': 'quien lo va a hacer?'})
         }
 
         labels = {

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'turnos',
     'bootstrap4',
     'bootstrap_datepicker_plus',
+    ''
 ]
 
 MIDDLEWARE = [
