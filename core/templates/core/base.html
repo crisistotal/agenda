@@ -16,6 +16,8 @@
   <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static 'core/css/main.css' %}" rel="stylesheet">
 
+  {% block extra_css %}
+  {% endblock extra_css %}
   <!--XDSoft Datetimepicker-->
   
 </head>
@@ -55,6 +57,30 @@
   <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'core/js/main.js' %}"></script>
+  <script src="{% static 'core/fullcalendar/lib/main.js' %}"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded',function(){
+        var calendarUI = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarUI,{
+          headerToolbar: {
+            left : 'prev,next today',
+            center : 'title',
+          },
+            events : [
+                {% for turno in turno_list %} 
+                    {
+                        title : "{{ turno.nombre }}",
+                        start : '{{ turno.fecha|date:"Y-m-d" }}T{{ turno.fecha|time:"H:i"}}',
+                        url : "{% url 'turnos:update_turno' turno.id|slugify %}"
+                        
+                    },
+                {% endfor %}
+            ]
+        });
+        calendar.render();
+        calendar.setOption('locale','es');
+    });
+</script>
  
 </body>
 

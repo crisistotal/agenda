@@ -39,7 +39,6 @@ class Turno(models.Model):
     def __str__(self):
         return f' {self.get_tipo_display()} de {self.nombre} con {self.celular} a las {self.fecha}'
 
-
     # @property
     # def disponibilidad(self):
     #     disponible = True

@@ -1,2 +1,2 @@
-Crear Vista Delete
-subir a git
+Enlazar css de calendar
+enlazar js de calendar

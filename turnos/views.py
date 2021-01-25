@@ -31,7 +31,7 @@ class TurnoUpdateView(UpdateView):
     model = Turno
     form_class = TurnoForm
     template_name_suffix = "_update_form"
-    # Esto debera volver a otro lado
+    # Esto debera volver a otro lado pero por lo pronto vuelve al mismo turno
     def get_success_url(self):
         return reverse_lazy('turnos:update_turno', args=[self.object.id]) + '?ok'
 

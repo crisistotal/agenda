@@ -1,9 +1,14 @@
 {% extends "core/base.html" %}
+
 {% load static %}
 {% block content %}
+{% block extra_css %}
+<link href="{% static 'turnos/fullcalendar/lib/main.css' %}" rel="stylesheet" type="text/css">
+
+{% endblock extra_css %}
 <main role="main">
     <div class="container mb-4">
-        <div class="card shadow mb-4">
+        <!-- <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-success">Turnos</h6>
             </div>
@@ -36,7 +41,14 @@
                         </div>
                 </div>
             </div>
-        </div>
+        </div> --> 
+
+        <div id="calendar"></div>
+        
     </div>
 </main>
 {% endblock %}
+{% block extra_js %}
+
+{% endblock extra_js %}
+
