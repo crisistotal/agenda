@@ -1,2 +1,10 @@
-Enlazar css de calendar
-enlazar js de calendar
+Se me ocurrio ponermelo a hacer ahora
+
+Agregar boton para eliminar 26/1/21
+
+Sigue:
+---> Meter un modal
+---> Modulo de registro
+---> Landing page en algun momento
+
+

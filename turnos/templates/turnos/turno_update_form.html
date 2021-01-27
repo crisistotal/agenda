@@ -11,14 +11,15 @@
       <div class="col-md-9 mx-auto">
         <div> 
         {% if 'ok' in request.GET %}
-          <p style="color:green">
+          <p  style="color:green">
               Turno editado correctamente.
-            <a href="{% url 'turnos:turno'%}" > Click aqui para ver los cambios en el calendario </a>
+            <a class="btn btn-primary" href="{% url 'turnos:turno'%}" >Volver a calendario </a>
           </p>
         {% endif %}
             <form action="" method="post">{% csrf_token %}
                     {{ form.as_p }}
-                <input type="submit" class="btn btn-success btn-block " value="Actualizar Turno" />
+                <input type="submit" class="btn btn-primary btn-block " value="Actualizar Turno" />
+                <a class="btn btn-outline-danger btn-block"  href="{% url 'turnos:delete_turno' turno.id|slugify %}" > Borrar </a>
             </form>
         </div>
       </div>
